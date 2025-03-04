@@ -1,0 +1,5 @@
+# Changelog for SRTouchAnimal
+
+1.5.1 - Updated to 1.5, made the settings a bit more readable
+Used DeepL to update translations for German
+

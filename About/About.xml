@@ -1,25 +1,77 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-    <packageId>SR.ModRimworld.TouchAnimal</packageId>
-    <name>[SR]Touch Animal</name>
-    <author>Shadowrabbit</author>
-    <supportedVersions>
-        <li>1.2</li>
-        <li>1.3</li>
-        <li>1.4</li>
-    </supportedVersions>
-    <modDependencies>
-        <li>
-            <packageId>UnlimitedHugs.HugsLib</packageId>
-            <displayName>HugsLib</displayName>
-            <steamWorkshopUrl>steam://url/CommunityFilePage/818773962</steamWorkshopUrl>
-            <downloadUrl>https://ludeon.com/forums/index.php?topic=28066.0</downloadUrl>
-        </li>
-    </modDependencies>
-    <loadAfter>
-        <li>Ludeon.RimWorld</li>
-        <li>Ludeon.RimWorld.Royalty</li>
-        <li>UnlimitedHugs.HugsLib</li>
-    </loadAfter>
-    <description>Touch animal make me happy!</description>
+  <name>[SR]Touch Animal (Continued)</name>
+  <packageId>Mlie.SRTouchAnimal</packageId>
+  <author>Shadowrabbit</author>
+  <url>https://github.com/emipa606/SRTouchAnimal</url>
+  <supportedVersions>
+    <li>1.2</li>
+    <li>1.3</li>
+    <li>1.4</li>
+    <li>1.5</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>UnlimitedHugs.HugsLib</packageId>
+      <displayName>HugsLib</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/818773962</steamWorkshopUrl>
+      <downloadUrl>https://github.com/UnlimitedHugs/RimworldHugsLib/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>UnlimitedHugs.HugsLib</li>
+  </loadAfter>
+  <description>[img]https://i.imgur.com/buuPQel.png[/img]
+Update of Shadowrabbits mod https://steamcommunity.com/sharedfiles/filedetails/?id=2514826556
+
+[img]https://i.imgur.com/pufA0kM.png[/img]
+
+[table]
+    [tr][td][url=https://dsc.gg/mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td] [td][url=https://github.com/emipa606/SRTouchAnimal][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+    [/tr]
+    [tr]
+        [td][img]https://i.imgur.com/WjDSfUn.png[/img][/td]
+        [td][img]https://i.imgur.com/Be8E2qJ.png[/img][/td]
+    [/tr]
+[/table]
+	
+[img]https://i.imgur.com/Z4GOv8H.png[/img]
+[h1]Touch Animal[/h1]
+ID:2514826556
+Author:Shadowrabbit
+Support Version: 1.2, 1.3, 1.4
+Support Languages:简体中文(Chinese),ChineseTraditional (繁體中文),English,French (Français),Japanese (日本語),Korean (한국어)
+
+[h1]Describtion[/h1]
+A new behavior will be added to your pawns. It requires at least level 5 animal skill. Different animals require different levels.
+They sometimes try to find a animal to touch. This behavior will lift your pawn's mood and Increase the character's animal skill experience.
+
+[h1]Compatibility[/h1]
+It's hard to cause incompatibility. Animal from other mods will also take effect.
+
+[h1]Addiction[/h1]
+Much touching will cause pawn addiction.  It may not be a bad thing. Addiction causes characters to touch animals more often.
+It means you have more chances of acquiring animals.But if withdrawal occurs, the character will lose a lot of mood in a period of time.
+
+[h1]Animal Join[/h1]
+Touch animal has a low chance to make the animal join your faction. 
+The stronger the animal skills, the higher the probability of joining.
+ It is also effective for other faction characters. It means that a visitor with a high-level animal skill has a chance to steal your animal! Animals with owners will not join other factions。
+
+[h1]Custom Animal Type[/h1]
+You can set the kinds of animal you want to touch in the UI panel.
+
+Preview image is created by 金兔子拉面.
+
+[img]https://i.imgur.com/PwoNOj4.png[/img]
+[list]
+[*] See if the the error persists if you just have this mod and its requirements active.
+[*] If not, try adding your other mods until it happens again.
+[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] or the standalone [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader[/url] and command Ctrl+F12
+[*] For best support, please use the Discord-channel for error-reporting.
+[*] Do not report errors by making a discussion-thread, I get no notification of that.
+[*] If you have the solution for a problem, please post it to the GitHub repository.
+[*] Use [url=https://github.com/RimSort/RimSort/releases/latest]RimSort[/url] to sort your mods
+[/list]</description>
+  <modVersion IgnoreIfNoMatchingField="True">1.5.1</modVersion>
 </ModMetaData>
