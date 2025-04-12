@@ -24,15 +24,12 @@ public class ThinkNodeConditionalSatisfyTouchAnimal : ThinkNode_Conditional
     /// <returns></returns>
     protected override bool Satisfied(Pawn pawn)
     {
-        var allNeeds = pawn.needs.AllNeeds;
-        foreach (var need in allNeeds)
+        var touchNeed = pawn.needs?.TryGetNeed<NeedTouchAnimal>();
+        if (touchNeed == null)
         {
-            if (need is NeedTouchAnimal { CurCategory: <= DrugDesireCategory.Desire })
-            {
-                return true;
-            }
+            return false;
         }
 
-        return false;
+        return touchNeed.CurCategory <= DrugDesireCategory.Desire;
     }
 }
