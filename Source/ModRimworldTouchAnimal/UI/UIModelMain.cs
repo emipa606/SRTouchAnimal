@@ -20,7 +20,7 @@ public class UIModelMain
 
     public UIModelMain()
     {
-        SetAllAnimalDefs();
+        setAllAnimalDefs();
     }
 
     /// <summary>
@@ -41,7 +41,7 @@ public class UIModelMain
     ///     设置全部动物种类定义
     /// </summary>
     /// <returns></returns>
-    private void SetAllAnimalDefs()
+    private void setAllAnimalDefs()
     {
         //全部动物种类定义<kindDefName,pawnKindDef>
         var mapAllAnimalDefs = DefDatabase<PawnKindDef>.AllDefs.Where(CalcUtil.IsAnimal)

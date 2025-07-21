@@ -2,11 +2,17 @@
   "Continued": true,
   "CanAdd": "0",
   "CanRemove": "2",
-  "LastXmlCleaning": "2025-04-12T20:25:03.6433996+02:00",
+  "LastXmlCleaning": "2025-07-21T21:38:05.0598346+02:00",
   "SocialImageSet": true,
   "SearchTags": [
     " mood lifter",
     " joining factions"
   ],
-  "PreviewVersion": "1.5"
+  "PreviewVersion": "1.6",
+  "Patches": false,
+  "Defs": true,
+  "Assemblies": true,
+  "LinesOfCode": 43979,
+  "LinesOfXML": 3527,
+  "CodeBaseSize": 74
 }

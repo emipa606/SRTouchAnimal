@@ -34,7 +34,7 @@ public class NeedTouchAnimal(Pawn pawn) : Need(pawn)
             foreach (var hdf in hediffs)
             {
                 if (hdf is HediffAddictionTouchAnimal hediffAddiction &&
-                    hediffAddiction.def.causesNeed == def)
+                    hediffAddiction.def.chemicalNeed == def)
                 {
                     return hediffAddiction;
                 }

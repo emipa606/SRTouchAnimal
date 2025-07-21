@@ -46,7 +46,7 @@ public class UIModWindowMain : ModBase
             }
 
             _settingHandleSelectedAnimalDefs.Value = new SettingHandleSelectedAnimalDefs();
-            RefreshSelectedListHeight();
+            refreshSelectedListHeight();
 
             return _settingHandleSelectedAnimalDefs.Value.MapPawnKindDefSelectedData;
         }
@@ -63,13 +63,13 @@ public class UIModWindowMain : ModBase
     /// </summary>
     public override void DefsLoaded()
     {
-        InitSetting();
+        initSetting();
     }
 
     /// <summary>
     ///     初始化设置数据
     /// </summary>
-    private void InitSetting()
+    private void initSetting()
     {
         _model = new UIModelMain();
         //选择列表
@@ -78,8 +78,8 @@ public class UIModWindowMain : ModBase
                 "TitleAnimalsWantToTouch".Translate(), string.Empty);
         //GetHandle<T>会把默认值赋给Value,默认值必须为null，因为重置时默认字典与当前字典公用同一个指针，无法达到重置效果
         //刷新列表绘制高度
-        RefreshSelectedListHeight();
-        _settingHandleSelectedAnimalDefs.CustomDrawer = DrawAnimalSelectionList;
+        refreshSelectedListHeight();
+        _settingHandleSelectedAnimalDefs.CustomDrawer = drawAnimalSelectionList;
         //假定驯兽等级
         _currentSkillLevelAnimal = Settings.GetHandle("handleCurrentSkillLevelAnimal",
             "TitleAssumedSkillLevel".Translate(), string.Empty, 12, Validators.IntRangeValidator(1, 20));
@@ -88,7 +88,7 @@ public class UIModWindowMain : ModBase
             Settings.GetHandle("handleChanceToJoinList", "TitleTouchBehaviorInformation".Translate(),
                 string.Empty, string.Empty);
         _handleChanceToJoinList.CustomDrawerHeight = (_model.listAllAnimalDef.Count + 1) * ModDef.RowHeight;
-        _handleChanceToJoinList.CustomDrawer = DrawBehaviourTouchInfoList;
+        _handleChanceToJoinList.CustomDrawer = drawBehaviourTouchInfoList;
     }
 
     /// <summary>
@@ -96,7 +96,7 @@ public class UIModWindowMain : ModBase
     /// </summary>
     /// <param name="rect"></param>
     /// <returns>是否触发序列化</returns>
-    private bool DrawBehaviourTouchInfoList(Rect rect)
+    private bool drawBehaviourTouchInfoList(Rect rect)
     {
         //背景
         DrawUtil.DrawBg(rect, Color.white);
@@ -120,7 +120,7 @@ public class UIModWindowMain : ModBase
     /// </summary>
     /// <param name="rect"></param>
     /// <returns>是否触发序列化</returns>
-    private bool DrawAnimalSelectionList(Rect rect)
+    private bool drawAnimalSelectionList(Rect rect)
     {
         //是否需要序列化
         var isNeedToSave = false;
@@ -176,14 +176,14 @@ public class UIModWindowMain : ModBase
             return false;
         }
 
-        RefreshSelectedListHeight();
+        refreshSelectedListHeight();
         return true;
     }
 
     /// <summary>
     ///     刷新列表绘制高度
     /// </summary>
-    private void RefreshSelectedListHeight()
+    private void refreshSelectedListHeight()
     {
         var unSelectedCount = MapPawnKindDefSelectedData.Values.Count(isSelected => !isSelected);
         _settingHandleSelectedAnimalDefs.CustomDrawerHeight = _model.GetDrawHeight(unSelectedCount);

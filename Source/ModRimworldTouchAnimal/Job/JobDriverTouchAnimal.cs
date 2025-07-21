@@ -74,11 +74,11 @@ public class JobDriverTouchAnimal : JobDriver
         //触发抚摸动物的回忆
         pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.SrThoughtTouchAnimal);
         //概率触发成瘾	
-        CalcAddiction();
+        calcAddiction();
         //概率加入殖民者阵营
-        CalcJoin();
+        calcJoin();
         //计算需求
-        CalcNeedTouchAnimal();
+        calcNeedTouchAnimal();
         //增加驯兽经验
         pawn.skills.Learn(SkillDefOf.Animals, XpSkillAnimalLearn);
     }
@@ -86,7 +86,7 @@ public class JobDriverTouchAnimal : JobDriver
     /// <summary>
     ///     计算成瘾触发
     /// </summary>
-    private void CalcAddiction()
+    private void calcAddiction()
     {
         //已经成瘾 不会重复触发
         if (Enumerable.Any(pawn.health.hediffSet.hediffs,
@@ -123,7 +123,7 @@ public class JobDriverTouchAnimal : JobDriver
     /// <summary>
     ///     计算加入殖民者
     /// </summary>
-    private void CalcJoin()
+    private void calcJoin()
     {
         //阵营相同
         if (Animal.Faction == pawn.Faction)
@@ -154,7 +154,7 @@ public class JobDriverTouchAnimal : JobDriver
     /// <summary>
     ///     计算触摸动物需求
     /// </summary>
-    private void CalcNeedTouchAnimal()
+    private void calcNeedTouchAnimal()
     {
         //如果存在需求 恢复到最高水平
         var allNeeds = pawn.needs.AllNeeds;

@@ -62,7 +62,7 @@ public class HediffAddictionTouchAnimal : HediffWithComps
             }
 
             var allNeeds = pawn.needs.AllNeeds;
-            return allNeeds.Where(t => t.def == def.causesNeed).Cast<NeedTouchAnimal>().FirstOrDefault();
+            return allNeeds.Where(t => t.def == def.chemicalNeed).Cast<NeedTouchAnimal>().FirstOrDefault();
         }
     }
 

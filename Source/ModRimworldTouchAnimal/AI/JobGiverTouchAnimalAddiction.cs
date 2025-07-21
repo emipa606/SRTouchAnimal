@@ -40,7 +40,7 @@ public class JobGiverTouchAnimalAddiction : JobGiverTouchAnimal
     protected override Pawn FindAnimal(Pawn pawn)
     {
         //获取成瘾物种名称
-        var kindDefName = GetAddictionPawnKindDefName(pawn);
+        var kindDefName = getAddictionPawnKindDefName(pawn);
         //成瘾物种不存在
         if (kindDefName.Equals(string.Empty))
         {
@@ -123,7 +123,7 @@ public class JobGiverTouchAnimalAddiction : JobGiverTouchAnimal
     /// </summary>
     /// <param name="pawn"></param>
     /// <returns></returns>
-    private static string GetAddictionPawnKindDefName(Pawn pawn)
+    private static string getAddictionPawnKindDefName(Pawn pawn)
     {
         var hediffs = pawn.health.hediffSet.hediffs;
         foreach (var hdf in hediffs)
