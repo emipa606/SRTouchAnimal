@@ -6,4 +6,26 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="ModRimWorldTouchAnimal/ModRimWorldTouchAnimal.csproj" />
+  <Folder Name="/XML/1.7/Defs/ThinkTreeDefs/">
+    <File Path="../1.7/Defs/ThinkTreeDefs/SubTree.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/JobDefs/">
+    <File Path="../1.7/Defs/JobDefs/Jobs.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/NeedDefs/">
+    <File Path="../1.7/Defs/NeedDefs/Needs.xml" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/JobDriver.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/ThoughtDefs/">
+    <File Path="../1.7/Defs/ThoughtDefs/ThoughtsHediff.xml" />
+    <File Path="../1.7/Defs/ThoughtDefs/ThoughtsMemory.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/HediffDefs/">
+    <File Path="../1.7/Defs/HediffDefs/HediffsAddiction.xml" />
+  </Folder>
 </Solution>

@@ -17,11 +17,10 @@ namespace SR.ModRimWorldTouchAnimal;
 public class SettingHandleSelectedAnimalDefs : SettingHandleConvertible
 {
     //动物种类定义选择数据<kindDefName,isSelected> 注意未操作过的定义不在map内 并且默认值为选中
-    private Dictionary<string, bool> _mapPawnKindDefSelectedData;
 
     //恢复默认值后 _mapSelectedAnimalDefs为null 重新初始化
     public Dictionary<string, bool> MapPawnKindDefSelectedData =>
-        _mapPawnKindDefSelectedData ?? (_mapPawnKindDefSelectedData = new Dictionary<string, bool>());
+        field ?? (field = new Dictionary<string, bool>());
 
 
     /// <summary>

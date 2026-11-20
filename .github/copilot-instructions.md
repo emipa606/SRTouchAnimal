@@ -1,35 +1,66 @@
-# GitHub Copilot Instructions for RimWorld Modding Project
+.github/copilot-instructions.md
+
+# GitHub Copilot Instructions for [SR]Touch Animal (Continued) Mod
 
 ## Mod Overview and Purpose
-
-The "Touch Animal" RimWorld mod introduces new interactions between pawns and animals, focusing on enhancing the player's experience through unique game mechanics. It allows pawns to interact with animals in ways that affect their needs and behaviors, introducing new job assignments, needs, and addictions related to animal interaction.
+The [SR]Touch Animal (Continued) mod is an update of the Shadowrabbits mod. It adds a new behavior to pawns where they try to find animals to touch. This behavior will lift the pawn's mood and increase their animal skill experience. The mod also introduces addiction mechanics where excessive touching can cause pawns to become addicted, leading to more frequent touching but also potential mood swings during withdrawal. Additionally, the mod has a chance to make animals join the player's faction if they have strong animal skills.
 
 ## Key Features and Systems
+### Animal Touching Behavior
+Pawns will sometimes try to find animals to touch. This behavior requires a minimum animal skill level, which varies by animal type. Touching animals will increase the pawn's mood and animal skill experience.
 
-- **Job System:** Implements new JobGiver classes for animal interaction, including `JobGiverTouchAnimal` and `JobGiverTouchAnimalAddiction`, extending ThinkNode classes to integrate with the RimWorld job systems.
-- **Addiction and Needs:** Introduces new need and addiction mechanics, such as the `NeedTouchAnimal` and `HediffAddictionTouchAnimal`, which influence pawn behavior towards animals.
-- **Custom UI:** Adds new UI elements using `UIModelMain` and `UIModWindowMain` classes, allowing players to manage animal interactions and settings.
-- **Configuration Settings:** Provides custom settings using `SettingHandleSelectedAnimalDefs`, giving players control over which animals can be interacted with.
+### Addiction Mechanics
+Excessive touching can cause pawns to become addicted. Addiction increases the frequency of animal touching but may also lead to mood swings during withdrawal.
+
+### Animal Joining
+Pawns with strong animal skills have a chance to make animals join their faction. Animals with owners will not join other factions.
+
+### Custom Animal Types
+The mod provides a UI panel where players can set the kinds of animals they want their pawns to touch.
 
 ## Coding Patterns and Conventions
+### C# Files
+The mod uses C# files to define various behaviors and systems. Key C# files include:
+- `JobGiverTouchAnimal.cs` - Manages the job of touching animals.
+- `JobGiverTouchAnimalAddiction.cs` - Manages the addiction mechanics related to touching animals.
+- `ThinkNodeChancePerHourTouchAnimal.cs` - Manages the frequency of animal touching based on time.
+- `ThinkNodeConditionalSatisfyTouchAnimal.cs` - Manages the conditional satisfaction of the animal touching behavior.
+- `ModDef.cs` - Defines the mod itself.
 
-- **Inherit from Base Classes:** Extend existing RimWorld base classes such as `ThinkNode_JobGiver`, `Need`, and `JobDriver` to ensure compatibility and reduce code duplication.
-- **Static Def Classes:** Use static classes like `HediffDefOf`, `JobDefOf`, `NeedDefOf`, and `ThoughtDefOf` for defining constants and ensuring centralized management of definitions.
-- **Method Organization:** Maintain clear method naming and encapsulate functionality within methods like `CalcAddiction`, `CalcJoin`, and `Notify_NeedCategoryChanged` to enhance readability and maintainability.
-
-## XML Integration
-
-- Utilize XML to define mod settings, job definitions, and other in-game elements. Although specific XML files aren't summarized here, XML usually complements C# definitions in RimWorld mods by defining structure, defaults, and integration points for the mod content.
+### XML Integration
+The mod uses XML files to define various game elements such as hediffs, jobs, needs, think trees, and thoughts. Key XML files include:
+- `HediffsAddiction.xml` - Defines addiction hediffs.
+- `Jobs.xml` - Defines job definitions.
+- `Needs.xml` - Defines need definitions.
+- `SubTree.xml` - Defines think tree sub-trees.
+- `ThoughtsHediff.xml` - Defines thought definitions related to hediffs.
 
 ## Harmony Patching
-
-- Use Harmony for method patching to safely alter the behavior of core game methods without direct modification. This allows for compatibility with other mods and the ability to override or extend base game functionalities as needed.
+The mod uses Harmony patching to modify the base game behavior. Harmony is a popular modding library for RimWorld that allows mods to safely and efficiently patch the game code without causing conflicts.
 
 ## Suggestions for Copilot
+When using GitHub Copilot to assist with the [SR]Touch Animal (Continued) mod, consider the following:
 
-- **Documentation Assistance:** Use comments in code to outline how each component interacts with others. Copilot can help by suggesting relevant comments and documentation snippets to ensure clarity in complex systems.
-- **Code Completion:** Assist in the completion of method implementations for classes like `JobDriverTouchAnimal` and `NeedTouchAnimal` by providing typical patterns seen in modding scenarios.
-- **Pattern Recognition:** Recognize and suggest extensions of the base RimWorld classes to adhere to modding conventions.
-- **XML Generation:** Facilitate the automatic generation of XML structures when data definitions are updated in C#, ensuring a coherent integration between the code and data layers.
+1. **Follow Coding Patterns and Conventions**: Use the established patterns and conventions in the C# files to ensure consistency in your code.
+2. **Integrate with XML**: When adding new game elements, ensure they are properly defined in the appropriate XML files.
+3. **Use Harmony Patching**: When modifying base game behavior, use Harmony patching to avoid conflicts with other mods.
+4. **Test Thoroughly**: After making changes, thoroughly test the mod to ensure it works as expected and does not introduce new bugs or issues.
+5. **Document Changes**: Clearly document any changes you make, including the purpose and any potential side effects, to help other contributors understand the mod better.
 
-This guide provides an overview for developers working on the "Touch Animal" mod and how to leverage GitHub Copilot to enhance their workflow.
+By following these guidelines, you can effectively use GitHub Copilot to enhance the [SR]Touch Animal (Continued) mod and contribute to its continued development.
+
+## Project Solution Guidelines
+- Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
+- Use these in-solution XML files as the primary files for reference and modification.
+- The `.github/copilot-instructions.md` file is included in the solution under the `.github` solution folder, so it should be read/modified from within the solution instead of using paths outside the solution. Update this file once only, as it and the parent-path solution reference point to the same file in this workspace.
+- When making functional changes in this mod, ensure the documented features stay in sync with implementation; use the in-solution `.github` copy as the primary file.
+- In the solution is also a project called Assembly-CSharp, containing a read-only version of the decompiled game source, for reference and debugging purposes.
+- For any new documentation, update this copilot-instructions.md file rather than creating separate documentation files.
+
+
+## Hard rules (must follow)
+- Do NOT run commands that modify the repo (no git commit, git apply, dotnet format) unless explicitly asked.
+- Prefer minimal reads: read only the smallest code region needed (around the suspicious lines).
+- When mentioning SonarQube issues, automatically use the SonarQube MCP service to fetch and address issues instead of making inferred fixes without querying SonarQube first.
+- When mentioning the rimworld log, automatically use the Rimworld MCP service to fetch the log.
+
